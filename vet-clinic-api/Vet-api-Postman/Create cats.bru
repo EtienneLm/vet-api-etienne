@@ -1,0 +1,21 @@
+meta {
+  name: Create cats
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/api/v1/cats
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Fluffy",
+    "age": 3,
+    "breed": "Siamese",
+    "weight": 15.3
+  }
+  
+}

@@ -8,10 +8,10 @@ import (
 
 type Visit struct {
 	gorm.Model
-	CatID        uint      `json:"cat_id"`
-	Date         time.Time `json:"date"`
-	Reason       string    `json:"reason"`
-	Veterinarian string    `json:"veterinarian"`
+	CatID  uint      `json:"cat_id"`
+	Date   time.Time `json:"date"`
+	Reason string    `json:"reason"`
+	// Veterinarian string    `json:"veterinarian"`
 }
 
 type VisitRepository interface {

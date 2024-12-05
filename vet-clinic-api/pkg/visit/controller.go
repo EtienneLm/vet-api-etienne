@@ -29,10 +29,10 @@ func (controller *VisitController) CreateVisitHandler(w http.ResponseWriter, r *
 	}
 
 	visit := &dbmodel.Visit{
-		CatID:        req.CatID,
-		Date:         time.Now(),
-		Reason:       req.Reason,
-		Veterinarian: req.Veterinarian,
+		CatID:  req.CatID,
+		Date:   time.Now(),
+		Reason: req.Reason,
+		// Veterinarian: req.Veterinarian,
 	}
 
 	newVisit, err := controller.VisitRepository.Create(visit)
@@ -92,7 +92,7 @@ func (controller *VisitController) UpdateVisitHandler(w http.ResponseWriter, r *
 	}
 
 	visit.Reason = req.Reason
-	visit.Veterinarian = req.Veterinarian
+	// visit.Veterinarian = req.Veterinarian
 
 	updatedVisit, err := controller.VisitRepository.Update(visit)
 	if err != nil {

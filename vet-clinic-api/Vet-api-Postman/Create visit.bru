@@ -1,0 +1,19 @@
+meta {
+  name: Create visit
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/api/v1/visits
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "cat_id": 4,
+      "date": "2024-12-04",
+      "reason": "kidney problem"
+  }
+}

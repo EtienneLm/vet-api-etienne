@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Vet-api-Postman",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,9 +1,8 @@
 package models
 
 import (
+	"errors"
 	"net/http"
-
-	"github.com/go-chi/render"
 )
 
 type TreatmentRequest struct {
@@ -14,8 +13,17 @@ type TreatmentRequest struct {
 }
 
 func (tr *TreatmentRequest) Bind(r *http.Request) error {
-	if err := render.Bind(r, tr); err != nil {
-		return err
+	if tr.VisitID <= 0 {
+		return errors.New("id must be a positive number")
+	}
+	if tr.Name == "" {
+		return errors.New("name field cannot be empty")
+	}
+	if tr.Dosage == "" {
+		return errors.New("dosage field cannot be empty")
+	}
+	if tr.Frequency == "" {
+		return errors.New("frequency must be a positive number")
 	}
 	return nil
 }
